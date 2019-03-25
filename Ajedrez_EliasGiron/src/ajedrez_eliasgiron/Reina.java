@@ -1,6 +1,7 @@
 package ajedrez_eliasgiron;
 
-public class Reina extends Pieza{
+public class Reina extends Pieza {
+
     public Reina(int x, int y, char letra, boolean white) {
         super(x, y, letra, white);
     }
@@ -36,11 +37,21 @@ public class Reina extends Pieza{
     public void setWhite(boolean white) {
         this.white = white;
     }
+
     public boolean movimiento(int x, int y, int x2, int y2) {
-        if (x - x2 >= 1 || y - y2 < 2) {
-            return true;
+        if (white) {
+            if (x - x2 >= 1 || y - y2 < 2) {
+                return true;
+            } else {
+                return false;
+            }
         } else {
-            return false;
+            if (x2 - x >= 1 || y - y2 < 2) {
+                return true;
+            } else {
+                return false;
+            }
+            
         }
     }
 }
